@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Voo audio player</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="voo.js"></script>
+</head>
+<body>
+<div style="width:100%;height:35px;border:1px solid #000;">
+	<div class="position" style="width:0%;height:100%;background:#000;"></div>
+</div>
+<button play>Play</button><button pause>Pause</button><button stop>Stop</button>
+</body>
+<script type="text/javascript">
+var call = new Voo({src:'http://cs1-43v4.vk-cdn.net/p6/ab0044dbbf40e1.mp3'},$('div'));
+$('[play]').on('click',function(){
+	call.voo.play();
+});
+$('[pause]').on('click',function(){
+	call.voo.pause();
+});
+$('[stop]').on('click',function(){
+	call.voo.pause(0);
+});
+</script>
+</html>
