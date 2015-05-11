@@ -45,10 +45,12 @@
 			pause: function(p){
 				this.core.__.pause();
 				if(p!==undefined){
-					if(p==0){this.position(0,this.core);this.core.__.currentTime = p;this.core.state = 'stop';}
+					if(p<1){this.position(0,this.core);this.core.__.currentTime = 0;this.core.state = 'stop';}
 					else{this.core.__.currentTime = (this.core.__.duration/100)*p;this.core.state = 'pause';}
-				}else{this.core.state = 'pause';}
+				}
+				else{this.core.state = 'pause';}
 				clearInterval(this.core.i);
+				return true;
 			},
 			position: function(p,c){
 				var core = c || this.core;
